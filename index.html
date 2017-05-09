@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<title>F2E-WK11</title>
+		<!-- Latest compiled and minified CSS -->
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+		<!-- Optional theme -->
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+		
+	</head>
+	<body>
+		<div class="container">
+			<div id="message-success" class="alert alert-success" role="alert"></div>
+			<div id="message-error" class="alert alert-danger" role="alert"></div>
+			<button id="btn-signout" class="btn btn-danger">Sign Out</button>
+			<nav>
+				<ul class="nav nav-tabs">
+					<li role="presentation" class="active" data-target="div-user-info"><a href="#">User Info</a></li>
+					<li role="presentation" data-target="form-update"><a href="#">Update Profile</a></li>
+					<li role="presentation" data-target="div-messenger"><a href="#">Messenger</a></li>
+				</ul>
+			</nav>
+		</div>
+
+		<div id="asdf"></div>
+
+		<div class="container">
+			<div id="restricted-contents">
+				<form id="form-update">
+					<h1>Update User Info</h1>
+					<img id="img-update-profile-pic" width="100">
+					<div class="form-group">
+						<label for="exampleInputEmail1">Username</label>
+						<input type="text" class="form-control" name="username" id="update-username" placeholder="Username">
+					</div>
+					<div class="form-group">
+						<label for="update-photo">Profile Picture</label>
+						<input type="file" class="form-control" id="update-photo" accept="image/*">
+					</div>
+					<div class="form-group">
+						<label for="update-occupation">Occupation</label>
+						<input type="text" name="occupation" class="form-control" id="update-occupation" placeholder="Occupation">
+					</div>
+					<div class="form-group">
+						<label for="update-age">Age</label>
+						<input type="number" name="age" class="form-control" id="update-age" value="18">
+					</div>
+					<div class="form-group">
+						<label for="update-description">Description</label>
+						<textarea name="description" class="form-control" id="update-description" placeholder="Description"></textarea>
+					</div>
+					<button class="btn btn-primary">Update</button>
+				</form>
+
+				<div id="div-user-info">
+					<h1>User Info</h1>
+					<h4>Username</h4>
+					<p id="profile-username"></p>
+					<img id="img-profile-pic" width="100">
+					<h4>Occupation</h4>
+					<p id="profile-occupation"></p>
+					<h4>Age</h4>
+					<p id="profile-age"></p>
+					<h4>Description</h4>
+					<p id="profile-description"></p>
+				</div>
+
+				<div id="div-messenger">
+					<h1>Messenger</h1>
+					<ul id="messenger-list" class="list-group"></ul>
+					<form id="form-messenger">
+						<div class="input-group">
+							<input id="messenger-message" type="text" name="message" class="form-control">
+							<span class="input-group-btn">
+								<button type="submit" class="btn btn-primary">Send</button>
+							</span>
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
+
+		<div id="modal-login" class="modal fade" tabindex="-1" role="dialog">
+			<div class="modal-dialog" role="document">
+				<div class="modal-content">
+					<div class="modal-body">
+						<form id="form-signin">
+							<h1>Sign In</h1>
+							<div class="form-group">
+								<label for="exampleInputEmail1">Email address</label>
+								<input type="email" id="login-email" class="form-control" id="exampleInputEmail1" placeholder="Email">
+							</div>
+								<div class="form-group">
+								<label for="exampleInputPassword1">Password</label>
+								<input id="login-password" type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+							</div>
+							<button id="btn-signup" class="btn btn-default">Sign Up</button>
+							<button id="btn-signin" class="btn btn-primary">Sign In</button>
+						</form>
+					</div>
+				</div><!-- /.modal-content -->
+			</div><!-- /.modal-dialog -->
+		</div><!-- /.modal -->
+
+		<script src="https://www.gstatic.com/firebasejs/3.9.0/firebase.js"></script>
+		<script src="https://www.gstatic.com/firebasejs/3.9.0/firebase-app.js"></script>
+		<script src="https://www.gstatic.com/firebasejs/3.9.0/firebase-auth.js"></script>
+		<script src="https://www.gstatic.com/firebasejs/3.9.0/firebase-database.js"></script>
+		<script src="https://www.gstatic.com/firebasejs/3.9.0/firebase-messaging.js"></script>
+		<script src="https://www.gstatic.com/firebasejs/3.9.0/firebase-storage.js"></script>
+		<script>
+			
+		</script>
+		<!-- Latest compiled and minified JavaScript -->
+		<script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+		<script type="text/javascript" src="scripts/main.js"></script>
+	</body>
+</html>
