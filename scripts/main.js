@@ -69,8 +69,9 @@ var onGetUser = function(newUser) {
 			$name = $('<strong>').text(message.name);
 
 		if(message.photoURL)
-			$li.append($('<img height="40">').attr('src', message.photoURL));
-		$li.append(' ').append($name).append(' ' + message.message);
+			$li.append($('<img height="40">').attr('src', message.photoURL)).append(' ');
+
+		$li.append($name).append(' ').append($('<span>').text(message.message));
 
 		$('#messenger-list').append($li);
 
@@ -144,6 +145,8 @@ $('#form-update').submit(function(e) {
 		acc[entry.name] = entry.value;
 		return acc;
 	}), {});
+
+	data.photoURL = profile.photoURL;
 
 	var userId = firebase.auth().currentUser.uid,
 		file = $('#update-photo').get(0).files[0];
