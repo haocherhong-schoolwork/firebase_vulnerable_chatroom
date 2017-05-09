@@ -96,7 +96,10 @@ var onGetProfile = function(newProfile) {
 		setTab('div-user-info');
 
 		if(profile.photoURL)
-			$('#img-profile-pic, #img-update-profile-pic').attr('src', profile.photoURL);
+			$('#img-profile-pic, #img-update-profile-pic').attr('src', profile.photoURL).show();
+		else
+			$('#img-profile-pic, #img-update-profile-pic').hide();
+		
 	} else {
 		setTab('form-update')
 	}
@@ -146,7 +149,8 @@ $('#form-update').submit(function(e) {
 		return acc;
 	}), {});
 
-	data.photoURL = profile.photoURL;
+	if(data.photoURL)
+		data.photoURL = profile.photoURL;
 
 	var userId = firebase.auth().currentUser.uid,
 		file = $('#update-photo').get(0).files[0];
